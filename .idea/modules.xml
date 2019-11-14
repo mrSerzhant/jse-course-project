@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/jse-course-project.iml" filepath="$PROJECT_DIR$/jse-course-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jse-project-admin/jse-project-admin.iml" filepath="$PROJECT_DIR$/jse-project-admin/jse-project-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jse-project-client/jse-project-client.iml" filepath="$PROJECT_DIR$/jse-project-client/jse-project-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jse-project-server/jse-project-server.iml" filepath="$PROJECT_DIR$/jse-project-server/jse-project-server.iml" />
+    </modules>
+  </component>
+</project>

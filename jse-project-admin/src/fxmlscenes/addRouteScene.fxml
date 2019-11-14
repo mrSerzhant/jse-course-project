@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scenecontrollers.AddRouteController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="GAINSBORO" height="10.0" layoutY="50.0" stroke="GAINSBORO" strokeType="INSIDE" width="460.0" AnchorPane.leftAnchor="0.0" />
+      <TextField fx:id="numberLabel" layoutX="235.0" layoutY="73.0" prefHeight="25.0" prefWidth="88.0" />
+      <Label layoutX="8.0" layoutY="76.0" prefHeight="20.0" prefWidth="226.0" text="Установить номер маршрута:">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="344.0" layoutY="73.0" mnemonicParsing="false" onAction="#confirmChangeNumber" text="Подтвердить" AnchorPane.rightAnchor="468.0" />
+      <TableView fx:id="tableStations" layoutX="83.0" layoutY="87.0" prefHeight="345.0" prefWidth="450.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="450.0">
+        <columns>
+            <TableColumn fx:id="number" prefWidth="20.0" text="№" />
+          <TableColumn fx:id="nameStation" editable="false" prefWidth="120.0" resizable="false" sortable="false" text="Станция" />
+          <TableColumn fx:id="arrival" editable="false" resizable="false" sortable="false" text="Прибытие" />
+            <TableColumn fx:id="departure" editable="false" prefWidth="85.0" resizable="false" sortable="false" text="Отправление" />
+            <TableColumn fx:id="change" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="Изменить" />
+            <TableColumn fx:id="delete" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="Удалить" />
+        </columns>
+      </TableView>
+      <Label layoutX="8.0" layoutY="10.0" prefHeight="28.0" prefWidth="88.0" text="Маршрут :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="450.0" prefHeight="200.0" prefWidth="450.0" style="-fx-background-color: #dcdcdc;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="107.0" layoutY="243.0" prefHeight="28.0" prefWidth="269.0" text="Добавить новую станцию">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f4" height="10.0" stroke="#f4f4f4" strokeType="INSIDE" width="450.0" AnchorPane.topAnchor="220.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f4" height="10.0" stroke="#f4f4f4" strokeType="INSIDE" width="450.0" AnchorPane.topAnchor="50.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f4" height="10.0" stroke="#f4f4f4" strokeType="INSIDE" width="450.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="280.0" />
+            <Label fx:id="nameChangeStation" layoutX="275.0" layoutY="14.0" prefHeight="28.0" prefWidth="120.0" text="NAME" visible="false">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="62.0" layoutY="14.0" prefHeight="28.0" prefWidth="213.0" text="Изменить станцию -">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonConfirmChangeStation" disable="true" layoutX="348.0" layoutY="184.0" mnemonicParsing="false" onAction="#confirmChangeStation" text="Подтвердить" AnchorPane.rightAnchor="15.0" />
+            <Label layoutX="310.0" layoutY="106.0" text="Минуты" />
+            <TextField fx:id="arrivalMinutesLabel" layoutX="312.0" layoutY="130.0" prefHeight="30.0" prefWidth="40.0" AnchorPane.leftAnchor="202.0" />
+            <Label layoutX="151.0" layoutY="106.0" text="Часы" />
+            <Label layoutX="199.0" layoutY="106.0" text="Минуты" />
+            <TextField fx:id="departureMinutesLabel" layoutX="312.0" layoutY="130.0" prefHeight="30.0" prefWidth="40.0" AnchorPane.leftAnchor="312.0" />
+            <Label layoutX="263.0" layoutY="106.0" text="Часы" />
+            <Label layoutX="43.0" layoutY="105.0" text="Название" />
+            <TextField fx:id="departureHoursLabel" layoutX="257.0" layoutY="130.0" prefHeight="30.0" prefWidth="40.0" AnchorPane.leftAnchor="257.0" />
+            <Label layoutX="165.0" layoutY="76.0" text="Прибытие">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="265.0" layoutY="76.0" text="Отправление">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="arrivalHoursLabel" layoutX="257.0" layoutY="130.0" prefHeight="30.0" prefWidth="40.0" AnchorPane.leftAnchor="147.0" />
+            <TextField fx:id="nameLabel" layoutX="12.0" layoutY="130.0" prefHeight="30.0" prefWidth="120.0" AnchorPane.leftAnchor="12.0" />
+            <Button fx:id="buttonCancelChangeStation" disable="true" layoutX="266.0" layoutY="184.0" mnemonicParsing="false" onAction="#cancelChangeStation" text="Отменить" />
+            <Label layoutX="310.0" layoutY="335.0" text="Минуты" />
+            <TextField fx:id="arrivalMinutesLabelAdd" layoutX="201.0" layoutY="360.0" prefHeight="30.0" prefWidth="40.0" AnchorPane.leftAnchor="202.0" />
+            <Label layoutX="151.0" layoutY="335.0" text="Часы" />
+            <Label layoutX="199.0" layoutY="335.0" text="Минуты" />
+            <TextField fx:id="departureMinutesLabelAdd" layoutX="312.0" layoutY="360.0" prefHeight="30.0" prefWidth="40.0" AnchorPane.leftAnchor="312.0" />
+            <Label layoutX="263.0" layoutY="335.0" text="Часы" />
+            <Label layoutX="43.0" layoutY="334.0" text="Название" />
+            <TextField fx:id="departureHoursLabelAdd" layoutX="255.0" layoutY="359.0" prefHeight="30.0" prefWidth="40.0" AnchorPane.leftAnchor="257.0" />
+            <Label layoutX="265.0" layoutY="306.0" text="Отправление">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="arrivalHoursLabelAdd" layoutX="146.0" layoutY="359.0" prefHeight="30.0" prefWidth="40.0" AnchorPane.leftAnchor="147.0" />
+            <TextField fx:id="nameStationAdd" layoutX="12.0" layoutY="359.0" prefHeight="30.0" prefWidth="120.0" AnchorPane.leftAnchor="12.0" />
+            <Label layoutX="165.0" layoutY="306.0" text="Прибытие">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonConfirmAddStation" layoutX="351.0" layoutY="404.0" mnemonicParsing="false" onAction="#confirmAddStation" text="Добавить станцию" AnchorPane.rightAnchor="15.0" />
+            <Label layoutX="373.0" layoutY="335.0" text="Позиция" />
+            <ComboBox fx:id="indexAddStation" layoutX="371.0" layoutY="362.0" onMouseClicked="#calculateIndexAddStation" prefHeight="25.0" prefWidth="53.0" />
+            <Button layoutX="16.0" layoutY="404.0" mnemonicParsing="false" onAction="#closeWindow" text="Отменить добавление" AnchorPane.leftAnchor="15.0" />
+            <Button fx:id="addRouteButton" layoutX="174.0" layoutY="404.0" mnemonicParsing="false" onAction="#confirmAddRoute" text="Добавить маршрут" />
+         </children>
+      </AnchorPane>
+      <Label fx:id="nameRoute" layoutX="96.0" layoutY="11.0" prefHeight="26.0" prefWidth="230.0" text="NAME">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberRoute" layoutX="401.0" layoutY="11.0" prefHeight="26.0" prefWidth="49.0" text="№" underline="true">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="341.0" layoutY="10.0" prefHeight="28.0" prefWidth="70.0" text="Номер: ">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

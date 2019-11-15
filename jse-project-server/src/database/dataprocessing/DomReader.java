@@ -68,7 +68,7 @@ public class DomReader {
             }
 
             route.setStops(stationList);
-            javaBean.put(ListRoutesUtils.routeNameMaker(stationList, routeNumber), route);
+            javaBean.put(ListRoutesUtils.routeNameMaker(stationList), route);
         }
 
         return javaBean;

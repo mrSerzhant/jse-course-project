@@ -157,8 +157,6 @@ class StartServer implements Runnable {
 
     public static void main(String[] args) throws ParserConfigurationException, TransformerException {
        new Thread(new StartServer()).run();
-
-
     }
 }
 

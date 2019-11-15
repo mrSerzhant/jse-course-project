@@ -4,12 +4,12 @@ import java.util.List;
 
 public class ListRoutesUtils {
 
-    public static String routeNameMaker(List<Station> stationArrayList, String routeNmber){
+    public static String routeNameMaker(List<Station> stationArrayList){
         StringBuilder stringBuilder = new StringBuilder();
         for(Station station : stationArrayList){
             stringBuilder.append(station.getName());
         }
 
-        return routeNmber + stringBuilder.toString();
+        return stringBuilder.toString();
     }
 }

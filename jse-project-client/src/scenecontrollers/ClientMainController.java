@@ -1,4 +1,5 @@
 package scenecontrollers;
+
 import connection.Connection;
 import data.datamain.Route;
 import data.datamain.Station;
@@ -24,6 +25,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
@@ -164,12 +166,30 @@ public class ClientMainController {
                 listForSearch.clear();
             }
 
-            for (Map.Entry<String, Route> mapElements : map.entrySet()) {
-                if (mapElements.getKey().toLowerCase().contains(arrivalValue.toLowerCase()) &&
-                        mapElements.getKey().toLowerCase().indexOf(arrivalValue.toLowerCase()) >
-                                mapElements.getKey().toLowerCase().indexOf(departureValue.toLowerCase()) &&
-                        mapElements.getKey().toLowerCase().indexOf(arrivalValue.toLowerCase()) != 2) {
-                    listForSearch.add(mapElements.getValue());
+            if (departureValue.isEmpty()) {
+                String arrivalValueLowerCase = arrivalValue.toLowerCase();
+
+                for (Map.Entry<String, Route> mapElements : map.entrySet()) {
+                    if (mapElements.getKey().toLowerCase().contains(arrivalValueLowerCase) &&
+                            mapElements.getKey().toLowerCase().indexOf(arrivalValueLowerCase) != 0) {
+                        listForSearch.add(mapElements.getValue());
+                    }
+                }
+            } else {
+                String arrivalValueLowerCase = arrivalValue.toLowerCase();
+                String departureValueLowerCase = departureValue.toLowerCase();
+
+                for (Map.Entry<String, Route> mapElements : map.entrySet()) {
+
+                    if (mapElements.getKey().toLowerCase().contains(departureValueLowerCase) &&
+                            mapElements.getKey().toLowerCase().contains(arrivalValueLowerCase)) {
+                        int indexArrivalValue =  mapElements.getKey().toLowerCase().indexOf(arrivalValueLowerCase);
+                        int indexDepartureValue =  mapElements.getKey().toLowerCase().indexOf(departureValueLowerCase);
+
+                        if(indexArrivalValue > indexDepartureValue){
+                            listForSearch.add(mapElements.getValue());
+                        }
+                    }
                 }
             }
 
@@ -271,7 +291,7 @@ public class ClientMainController {
         return controller;
     }
 
-    public HashMap<String, Route> getMap(){
+    public HashMap<String, Route> getMap() {
         return map;
     }
 }

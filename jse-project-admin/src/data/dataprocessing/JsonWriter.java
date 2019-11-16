@@ -15,13 +15,10 @@ public class JsonWriter {
 
         for (Map.Entry<String, Route> map : javaBean.entrySet()) {
             jsonWriter.object();
-
             jsonWriter.key("route").object();
 
             jsonWriter.key("routeName").value(map.getValue().getName());
             jsonWriter.key("routeNumber").value(map.getValue().getNumber());
-            jsonWriter.key("routeTravelTime").value(map.getValue().getTravelTime());
-
             jsonWriter.key("station").array();
 
             for (Station station : map.getValue().getStops()) {
@@ -29,7 +26,6 @@ public class JsonWriter {
                 jsonWriter.key("name").value(station.getName());
                 jsonWriter.key("timeArrival").value(DateBuilder.printDate(station.getArrival()));
                 jsonWriter.key("timeDeparture").value(DateBuilder.printDate(station.getDeparture()));
-                jsonWriter.key("stopTime").value(DateBuilder.printDate(station.getDeparture()));
                 jsonWriter.endObject();
             }
             jsonWriter.endArray();

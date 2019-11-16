@@ -274,7 +274,6 @@ public class ClientMainController {
     private void exitApp(ActionEvent event) throws IOException {
         Alert alertBox = new Alert(Alert.AlertType.CONFIRMATION);
         alertBox.setTitle("Внимание");
-        //alertBox.setContentText("Нажмите 'ОК' для подтверждения");
         alertBox.setHeaderText("Действительно желаете выйти?");
 
         Optional<ButtonType> result = alertBox.showAndWait();

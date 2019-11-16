@@ -165,7 +165,7 @@ public class MainController {
 
         Optional<ButtonType> result = alertBox.showAndWait();
         if (result.get() == ButtonType.OK) {
-            String mapKey = ListRoutesUtils.routeNameMaker(route.getStops());
+            String mapKey = ListRoutesUtils.routeNameBuilder(route.getStops(), route.getNumber());
             map.remove(mapKey);
             sendData();
         }

@@ -7,7 +7,7 @@ public class MapBuilder extends HashMap<String, Route> {
     public MapBuilder() {
         ListRoutes listRoute = new ListRoutes();
         for(Route route: listRoute.getRouteList()){
-            super.put(ListRoutesUtils.routeNameMaker(route.getStops()),route);
+            super.put(ListRoutesUtils.routeNameBuilder(route.getStops(),route.getNumber()),route);
         }
     }
 }

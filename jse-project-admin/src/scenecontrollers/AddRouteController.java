@@ -280,7 +280,7 @@ public class AddRouteController {
             alertBox.setContentText("Некорректные данные.(Минимальное количество станций - 2, номер маршрута должен быть указан)");
             alertBox.show();
         } else {
-            map.put(ListRoutesUtils.routeNameMaker(listStations), tempRoute);
+            map.put(ListRoutesUtils.routeNameBuilder(listStations, numberRoute.getText()), tempRoute);
             Connection connection = new Connection();
             JsonWriter jsonWriter = new JsonWriter();
             connection.sendDataToServer(jsonWriter.writeStringToDataBase(map));

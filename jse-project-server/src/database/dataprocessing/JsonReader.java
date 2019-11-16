@@ -44,7 +44,7 @@ public class JsonReader {
                 route.addStop(station);
             }
 
-            javaBean.put(ListRoutesUtils.routeNameMaker(route.getStops()), route);
+            javaBean.put(ListRoutesUtils.routeNameBuilder(route.getStops(), routeNumber), route);
 
         }
         return javaBean;

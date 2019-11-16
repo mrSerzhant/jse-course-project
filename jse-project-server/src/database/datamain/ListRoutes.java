@@ -1,5 +1,4 @@
 package database.datamain;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +7,7 @@ public class ListRoutes {
 
     public ListRoutes() {
         routeList = new ArrayList<>();
-        routeList.add(new Route("12S") {{
+        routeList.add(new Route("1S") {{
             addStop(new Station("Минск", "04:20", "04:23"));
             addStop(new Station("Барановичи", "06:23", "06:25"));
             addStop(new Station("Ивацевичи", "07:14", "07:16"));

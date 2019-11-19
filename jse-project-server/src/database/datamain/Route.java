@@ -26,6 +26,10 @@ public class Route {
         stops.add(station);
     }
 
+    public void addStopsList(List<Station> stationList){
+        stops.addAll(stationList);
+    }
+    
     public String toString(){
         return String.format("%s - %s - %s",number, getName(),getTravelTime());
     }

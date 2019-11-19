@@ -1,9 +1,11 @@
 package server;
+
 import database.datamain.MapBuilder;
 import database.datamain.Route;
 import database.datamain.User;
 import database.dataprocessing.*;
 import org.xml.sax.SAXException;
+
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import java.io.*;
@@ -42,7 +44,6 @@ class StartServer implements Runnable {
 
             while (true) {
                 Socket socket = serverSocket.accept();
-                System.out.println("Connect");
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
@@ -156,7 +157,8 @@ class StartServer implements Runnable {
     }
 
     public static void main(String[] args) throws ParserConfigurationException, TransformerException {
-       new Thread(new StartServer()).run();
+        new Thread(new StartServer()).run();
+
     }
 }
 

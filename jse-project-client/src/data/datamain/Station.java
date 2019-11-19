@@ -20,24 +20,7 @@ public class Station {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setArrival(Date arrival) {
-        this.arrival = arrival;
-    }
-
-    public void setDeparture(Date departure) {
-        this.departure = departure;
-    }
-
-    public void setStopTime(String stopTime) {
-        this.stopTime = stopTime;
-    }
-
     public String getName(){
-
         return name;
     }
 
@@ -46,7 +29,6 @@ public class Station {
     }
 
     public Date getDeparture(){
-
         return departure;
     }
 

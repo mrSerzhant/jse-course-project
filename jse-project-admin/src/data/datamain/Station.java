@@ -7,7 +7,6 @@ public class Station {
     private String name;
     private Date arrival;
     private Date departure;
-    private String stopTime;
 
     public Station(){}
 
@@ -15,7 +14,6 @@ public class Station {
         this.name = name;
         this.arrival = DateBuilder.createDate(arrival);
         this.departure = DateBuilder.createDate(departure);
-        this.stopTime = DateBuilder.createDifferenceTime(this.arrival,this.departure);
     }
 
     public String toString(){
@@ -49,10 +47,6 @@ public class Station {
         return departure;
     }
 
-    public String getStopTime(){
-        return stopTime;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -65,7 +59,6 @@ public class Station {
     public int hashCode() {
         return Objects.hash(name);
     }
-
 
 }
 

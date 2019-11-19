@@ -41,7 +41,7 @@ public class StationsWindowController {
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         arrival.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(DateBuilder.printDate(cellData.getValue().getArrival())));
         departure.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(DateBuilder.printDate(cellData.getValue().getDeparture())));
-        stopTime.setCellValueFactory(new PropertyValueFactory<>("stopTime"));
+        stopTime.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getStopTime()));
     }
 
     public void initData(List<Station> arrayList){

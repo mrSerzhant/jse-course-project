@@ -31,8 +31,6 @@ public class Connection {
         writerOne.write("GetData\n");
         writerOne.flush();
 
-        createSocket();
-
         writerOne = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
         writerOne.write(jsonString+"\n");
         writerOne.flush();

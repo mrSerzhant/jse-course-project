@@ -31,13 +31,8 @@ public class Connection {
         writer.write("GetUser\n");
         writer.flush();
 
-        createSocket();
-
-        writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
         writer.write(jsonString + "\n");
         writer.flush();
-
-        createSocket();
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         String response =  reader.readLine();
@@ -54,14 +49,10 @@ public class Connection {
         writer.write("GetUserData\n");
         writer.flush();
 
-        createSocket();
-
-        writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
         writer.write(jsonString + "\n");
         writer.flush();
         writer.close();
     }
-
 
     public String getUserData(String jsonString) throws IOException {
         createSocket();
@@ -70,13 +61,8 @@ public class Connection {
         writer.write("GiveUserData\n");
         writer.flush();
 
-        createSocket();
-
-        writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
         writer.write(jsonString + "\n");
         writer.flush();
-
-        createSocket();
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         String response =  reader.readLine();
